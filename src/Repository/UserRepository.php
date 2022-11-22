@@ -85,4 +85,12 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    public function findBirthAtById($id){
+        return $this->createQueryBuilder('user')
+        ->select('user.birthat','user.id')
+        ->andWhere('user.id = :id')
+        ->setParameter("id",$id)
+        ->getQuery()
+        ->getResult();
+   }
 }

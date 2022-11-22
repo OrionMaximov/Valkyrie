@@ -7,6 +7,7 @@ use App\Form\RegistrationFormType;
 use App\Security\Authenticator;
 use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
@@ -93,4 +95,21 @@ class RegistrationController extends AbstractController
 
         return $this->redirectToRoute('app_user_index');
     }
+    /**
+     * @Route(" pervers /{id})
+     *
+     * @param ManagerRegistry $doctrine
+     * @param [type] $id
+     * @return void
+     */
+    /* public function age(ManagerRegistry $doctrine,$id){
+        $age=$doctrine->getRepository(User::class);
+        $userAge=$age->findBirthAtById($id);
+        return $userAge;
+    }
+    private function ageVerif ($dateNaissance,ManagerRegistry $doctrine,UserInterface $user) {
+        $dateNaissance= age($doctrine,$user);
+        $aujourdhui = date("Y-m-d");
+        $diff = date_diff(date_create($dateNaissance), date_create($aujourdhui));
+        echo 'Votre age est '.$diff->format('%y');} */
 }
