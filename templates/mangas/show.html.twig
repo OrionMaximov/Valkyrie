@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mangas{% endblock %}
+
+{% block body %}
+    <h2>Mangas</h2>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ manga.titre }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ manga.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Serie</th>
+                <td>{{ manga.serie }}</td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ manga.isbn }}</td>
+            </tr>
+            {% if mode != null %}
+            <tr>
+                <th>Stock</th>
+                <td>en stock</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+            </tr>
+            {% else %}
+            <tr>
+                <th>Stock</th>
+                <td>rupture</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+            </tr>
+            {% endif %}
+            <tr>
+                <th>Etat</th>
+                <td>{{ manga.etat ? 'Neuf' : 'Occasion' }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ manga.prix }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mangas_index') }}">back to list</a>
+
+    
+{% endblock %}
