@@ -23,25 +23,46 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <div id="logo">
-                    <img src="{{asset('assets/image/logo-color.png')}}" alt="" class="logo">
-                </div>
-                <a class="navbar-brand" href=""> Valkyrie</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
-                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Bandes Dessinées</a>
-                        </li>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div id="logo">
+                <img src="{{asset('assets/image/logo-color.png')}}" alt="" class="logo">
+            </div>
+            <a class="navbar-brand" href=""> Valkyrie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{path ('home')}}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bandes Dessinées</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Comics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path ('app_mangas_index')}}">Mangas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Genres</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            {# Ajouter boucle pour les catégories #}
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex" id="searchBar">
+                    <ul class="navbar-nav me-auto" >
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Comics</a>
                         </li>
