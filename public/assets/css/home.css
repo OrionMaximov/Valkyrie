@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.banniere{
+    background-image: url(../image/banniere.jpg);
+    height: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoBanniere{
+    height: 20rem;
+    width: 50%; 
+}
+.carousel1 {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider {
+    position: relative;
+}
+
+#prev,
+#next {
+    position: absolute;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    top: 50%;
+}
+#prev:hover, #next:hover{
+    cursor: pointer;
+}
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
