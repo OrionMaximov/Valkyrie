@@ -1,7 +1,39 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
+
+{% endblock %}
+
+
+
 
 {% block title %}Valkyrie Book Store{% endblock %}
 
 {% block body %}
 
-{% endblock %}
+
+<div class="banniere">
+    <img src="{{asset('assets/image/logo-no-background.png')}}" alt="" class="logoBanniere">
+</div>
+
+
+<div class="carousel1">
+    <div id="slider">
+        <div id="prev"><</div>
+        <div id="next">></div>
+        <img src="" alt="">
+    </div>
+</div>
+
+<div class="livres">
+
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
