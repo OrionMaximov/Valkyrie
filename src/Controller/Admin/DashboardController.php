@@ -18,7 +18,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+         return parent::index(); 
     }
 
     public function configureDashboard(): Dashboard
@@ -33,5 +33,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Mangas', 'fas fa-book', Mangas::class);
+        yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
     }
 }
