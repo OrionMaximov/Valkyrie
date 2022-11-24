@@ -1,6 +1,7 @@
 #login{
     width: 80%;
     margin: 1rem auto;
+    min-height: 100vh;
 }
 .divForm{
     width: 80%;
@@ -23,6 +24,19 @@
     margin: auto 1rem;
 }
 .agreeTerms{
-    width: 80%;
+    width: 100%;
     margin: 1rem auto;
 }
+.checkbox{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: left;
+}
+.checkbox input{
+    width: 05%;
+}
+#formAlign{
+    padding-top: 25%;
+}
+

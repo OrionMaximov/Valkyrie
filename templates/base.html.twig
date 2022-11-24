@@ -13,10 +13,10 @@
     {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" 
-    crossorigin="anonymous"></script>
-    <script src="{{asset('assets/js/carousel.js')}}"defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+    <script src="{{asset('assets/js/carousel.js')}}" defer></script>
     {% block javascripts %}
     
     {{ encore_entry_script_tags('app') }}
@@ -25,58 +25,68 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <div id="logo">
-                <img src="{{asset('assets/image/logo-color.png')}}" alt="" class="logo">
-            </div>
-            <a class="navbar-brand" href=""> Valkyrie</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
-                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor02">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{path ('home')}}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bandes Dessinées</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Comics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{path ('app_mangas_index')}}">Mangas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Genres</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            {# Ajouter boucle pour les catégories #}
-                        </div>
-                    </li>
-                </ul>
-                <form class="d-flex" id="searchBar">
-                    <ul class="navbar-nav me-auto" >
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div id="logo">
+                    <img src="{{asset('assets/image/logo-color.png')}}" alt="" class="logo">
+                </div>
+                <a class="navbar-brand" href=""> Valkyrie</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{path ('app_login')}}">Connexion</a>
+                            <a class="nav-link active" href="{{path ('home')}}">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tout Public</a>
+                            <a class="nav-link" href="#">Bandes Dessinées</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Comics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path ('app_mangas_index')}}">Mangas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Genres</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                {# Ajouter boucle pour les catégories #}
+                            </div>
                         </li>
                     </ul>
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                    <form class="d-flex" id="searchBar">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path ('app_login')}}">Connexion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Tout Public</a>
+                            </li>
+                        </ul>
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-    {% block body %}{% endblock %}
+        </nav>
+    </header>
+
+    {% block body %} {% endblock %}
+    <div id="position">
+        <footer>
+            <div id="footer">
+                <a href="{{path('cgu')}}">Mentions légales</a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

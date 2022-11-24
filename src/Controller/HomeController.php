@@ -17,4 +17,24 @@ class HomeController extends AbstractController
             
         ]);
     }
+
+    /**
+     * @Route("/cgu", name="cgu")
+     */
+    public function indexCgu(): Response
+    {
+        return $this->render('home/cgu.html.twig', [
+            
+        ]);
+    }
+
+    /**
+     * @Route("/footer", name="footer")
+     */
+    public function indexFooter(): Response
+    {
+        return $this->render('home/footer.html.twig', [
+            
+        ]);
+    }
 }
