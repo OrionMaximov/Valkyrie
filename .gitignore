@@ -8,6 +8,7 @@
 /public/bundles/
 /var/
 /vendor/
+/public/assets/image/covers.*
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
