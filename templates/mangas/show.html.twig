@@ -1,52 +1,31 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/card.css')}}">
+
+{% endblock %}
+
 {% block title %}Mangas{% endblock %}
 
 {% block body %}
+<div class="livre">
     <h2>Mangas</h2>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Titre</th>
-                <td>{{ manga.titre }}</td>
-            </tr>
-            <tr>
-                <th>Auteur</th>
-                <td>{{ manga.auteur }}</td>
-            </tr>
-            <tr>
-                <th>Serie</th>
-                <td>{{ manga.serie }}</td>
-            </tr>
-            <tr>
-                <th>Isbn</th>
-                <td>{{ manga.isbn }}</td>
-            </tr>
-            {% if mode != null %}
-            <tr>
-                <th>Stock</th>
-                <td>en stock</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
-            </tr>
+    <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+        <div class="card-header"><h3><td>{{ manga.titre }}</td></h3></div>
+        <div class="card-body">
+          <h4 class="card-title"><td>{{ manga.auteur }}</td></h4>
+          <p class="card-text"><td>Nombre de volumes : {{ manga.serie }}</td></td></p>
+          <p class="card-text"><td>ISBN : {{ manga.isbn }}</td></p>
+          <p class="card-text">Stock : {% if mode != null %}
+                <td>Disponible</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
             {% else %}
-            <tr>
-                <th>Stock</th>
-                <td>rupture</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
-            </tr>
-            {% endif %}
-            <tr>
-                <th>Etat</th>
-                <td>{{ manga.etat ? 'Neuf' : 'Occasion' }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ manga.prix }}</td>
-            </tr>
-            
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_mangas_index') }}">back to list</a>
-
+                <td>Indisponible</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+            {% endif %}</p>
+            <p class="card-text"><td>Etat : {{ manga.etat ? 'Neuf' : 'Occasion' }}</td></p>
+            <p class="card-text"><td>Prix : {{ manga.prix }}</td></p>
+        </div>
+    <a href="{{ path('app_mangas_index') }}">Back to the futur</a>
+</div>
     
 {% endblock %}

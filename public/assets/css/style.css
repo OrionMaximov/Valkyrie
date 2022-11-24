@@ -5,17 +5,16 @@
 .logo{
     width: 100%;
 }
+.container-fluid{
+    padding: 0;
+    margin: 0;
+}
 #searchBar ul{
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
-#position{
-    position: relative;
-}
 #footer{
-    position: absolute;
-    top: - 120%;
     width: 100%;
     height: 5rem;
     margin: 1rem auto;
@@ -30,5 +29,3 @@
     color: white;
     text-decoration: none;
 }
-footer
-

@@ -22,11 +22,12 @@ class MangasCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            // IdField::new('id'),
             TextField::new('titre'),
             TextField::new('auteur'),
+            NumberField::new('serie'),
             TextField::new('isbn'),
-            TextField::new('quantite'),
+            NumberField::new('quantite'),
             NumberField::new('tarif'),
             BooleanField::new('etat'),
             NumberField::new('prix'),

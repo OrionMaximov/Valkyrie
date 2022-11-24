@@ -1,0 +1,11 @@
+.livre{
+    width: 100%;
+    margin: 1rem auto;
+}
+.livre h2{
+    text-align: center;
+}
+.card{
+    width: 80%;
+    margin: 1rem auto;
+}
