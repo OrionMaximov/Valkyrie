@@ -13,7 +13,7 @@
                 <th>Auteur</th>
                 <th>Serie</th>
                 <th>Isbn</th>
-                <th>Quantite</th>
+                {# <th>Quantite</th> #}
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -26,7 +26,7 @@
                 <td>{{ manga.auteur }}</td>
                 <td>{{ manga.serie }}</td>
                 <td>{{ manga.isbn }}</td>
-                <td>{{ manga.quantite }}</td>
+               {#  <td>{{ manga.quantite }}</td> #}
                 
                 <td>{{ manga.prix }}</td>
                 
@@ -37,7 +37,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Y'a rien, achète autre chose</td>
             </tr>
         {% endfor %}
         </tbody>
