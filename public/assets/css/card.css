@@ -1,8 +1,9 @@
 .livre{
     width: 100%;
+    min-height: 100 vh;
     margin: 1rem auto;
 }
-.livre h2{
+.livre h2, .livre a{
     text-align: center;
 }
 .card{
