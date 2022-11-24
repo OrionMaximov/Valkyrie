@@ -18,7 +18,9 @@
     crossorigin="anonymous"></script>
     <script src="{{asset('assets/js/carousel.js')}}"defer></script>
     {% block javascripts %}
+    
     {{ encore_entry_script_tags('app') }}
+
     {% endblock %}
 </head>
 
@@ -26,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <div id="logo">
-                <img src="{{asset('assets/image/logo.png')}}" alt="" class="logo">
+                <img src="{{asset('assets/image/logo-color.png')}}" alt="" class="logo">
             </div>
             <a class="navbar-brand" href=""> Valkyrie</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
