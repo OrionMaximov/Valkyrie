@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Mangas;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,6 +22,7 @@ class MangasType extends AbstractType
             ->add('etat')
             ->add('prix')
             ->add('pervers')
+            ->add('image',FileType::class)
         ;
     }
 
