@@ -40,6 +40,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             if ($form->isSubmitted() && $form->isValid()) {
+                
             $user->setRoles(['ROLE_USER']);
             // encode the plain password
             $user->setPassword(
@@ -73,6 +74,8 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+    
+   
 
     /**
      * @Route("/verify/email", name="app_verify_email")

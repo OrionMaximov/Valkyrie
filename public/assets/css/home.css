@@ -4,7 +4,7 @@
 }
 
 .banniere{
-    background-image: url(../image/mangabanniere.jpg);
+    background-image: url(assets/image/mangabanniere.jpg);
     height: 90vh;
     width: 100%;
     display: flex;

@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Mangas;
+use Gumlet\ImageResize;
 use App\Form\MangasType;
 use App\Repository\MangasRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/mangas")
@@ -37,6 +38,19 @@ class MangasController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $mangasRepository->add($manga, true);
+            $dirUpload=str_replace("\\","/",$this->getParameter('upload_directory')."/");
+            $dirAvatar=str_replace("\\","/",$this->getParameter('avatar_directory')."/");
+            $dirAvatarX=str_replace("\\","/",$this->getParameter('avatarx256_directory')."/");
+            move_uploaded_file($_FILES['Mangas_image.form-control']['tmp_name']['avatar'],$dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
+
+            $image= new ImageResize($dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
+                $image->resizeToWidth(100);
+                $image->save($dirAvatar.$manga->getId().".jpg",IMAGETYPE_JPEG);
+                $image2= new ImageResize($dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
+                $image2->resizeToWidth(256);
+                $image2->save($dirAvatarX.$manga->getId()."x256.jpg",IMAGETYPE_JPEG);
+
+                unlink($dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
 
             return $this->redirectToRoute('app_mangas_index', [], Response::HTTP_SEE_OTHER);
         }

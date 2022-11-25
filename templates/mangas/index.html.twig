@@ -6,8 +6,8 @@
 <h1>Mangas index</h1>
 <table class="table">
     <thead>
-        <tr>
-            <th>Titre</th>
+        <tr><div class="card-header">
+         <th>Titre</th>
             <th>Auteur</th>
             <td>Tome</td>
             <th>Serie</th>
@@ -17,10 +17,10 @@
             <th>actions</th>
         </tr>
     </thead>
-    <tbody>
+  <tbody>
         {% for manga in mangas %}
+        
         <tr>
-
             <td>{{ manga.titre }}</td>
             <td>{{ manga.auteur }}</td>
             <td>{{ manga.tome }}</td>
@@ -30,7 +30,7 @@
             <td>{{ manga.prix }}</td>
             <td>
                 <a href="{{ path('app_mangas_show', {'id': manga.id}) }}">show</a>
-            </td>
+            </td> 
         </tr>
         {% else %}
         <tr>
