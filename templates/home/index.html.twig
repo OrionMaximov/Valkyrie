@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
 {{ encore_entry_link_tags('app') }}
 <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
-
 {% endblock %}
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
-    <script src="{{asset('assets/js/mangas.js')}}" defer></script>;
-    <script src="{{asset('assets/js/comic.js')}}" defer></script>;
-    <script src="{{asset('assets/js/bandeD.js')}}" defer></script>;
+    <script src="{{asset('assets/js/mangas.js')}}" defer></script>
+    <script src="{{asset('assets/js/comic.js')}}" defer></script>
+    <script src="{{asset('assets/js/bandeD.js')}}" defer></script>
 {% endblock %}
 
 
@@ -19,7 +19,7 @@
 {% block body %}
 
 <div class="banniere">
-    <img src="{{asset('assets/image/logo-white.png')}}" alt="" class="logoBanniere">
+    <img src="{{asset('assets/image/logo-no-background.png')}}" alt="" class="logoBanniere">
 </div>
 
 
