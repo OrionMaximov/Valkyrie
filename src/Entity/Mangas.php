@@ -107,7 +107,7 @@ class Mangas
         return $this->tome;
     }
 
-    public function setTome(string $auteur): self
+    public function setTome(string $tome): self
     {
         $this->auteur = $tome;
 
