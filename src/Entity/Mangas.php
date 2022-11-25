@@ -28,6 +28,11 @@ class Mangas
     private $auteur;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $tome;
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $serie;
@@ -93,6 +98,18 @@ class Mangas
     public function setAuteur(string $auteur): self
     {
         $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getTome(): ?string
+    {
+        return $this->tome;
+    }
+
+    public function setTome(string $auteur): self
+    {
+        $this->auteur = $tome;
 
         return $this;
     }
