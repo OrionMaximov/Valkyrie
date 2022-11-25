@@ -15,6 +15,7 @@ class MangasType extends AbstractType
         $builder
             ->add('titre')
             ->add('auteur')
+            ->add('tome')
             ->add('serie')
             ->add('isbn')
             ->add('quantite')
