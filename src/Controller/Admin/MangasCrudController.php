@@ -25,6 +25,7 @@ class MangasCrudController extends AbstractCrudController
             // IdField::new('id'),
             TextField::new('titre'),
             TextField::new('auteur'),
+            TextField::new('tome'),
             NumberField::new('serie'),
             TextField::new('isbn'),
             NumberField::new('quantite'),

@@ -3,45 +3,40 @@
 {% block title %}Mangas index{% endblock %}
 
 {% block body %}
-    <h1>Mangas index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Serie</th>
-                <th>Isbn</th>
-                {# <th>Quantite</th> #}
-                <th>Prix</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<h1>Mangas index</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <td>Tome</td>
+            <th>Serie</th>
+            <th>Isbn</th>
+            {# <th>Quantite</th> #}
+            <th>Prix</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for manga in mangas %}
-            <tr>
-                
-                <td>{{ manga.titre }}</td>
-                <td>{{ manga.auteur }}</td>
-                <td>{{ manga.serie }}</td>
-                <td>{{ manga.isbn }}</td>
-               {#  <td>{{ manga.quantite }}</td> #}
-                
-                <td>{{ manga.prix }}</td>
-                
-                <td>
-                    <a href="{{ path('app_mangas_show', {'id': manga.id}) }}">show</a>
-                    
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">Y'a rien, achète autre chose</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <tr>
 
-   
+            <td>{{ manga.titre }}</td>
+            <td>{{ manga.auteur }}</td>
+            <td>{{ manga.tome }}</td>
+            <td>{{ manga.serie }}</td>
+            <td>{{ manga.isbn }}</td>
+            {#  <td>{{ manga.quantite }}</td> #}
+            <td>{{ manga.prix }}</td>
+            <td>
+                <a href="{{ path('app_mangas_show', {'id': manga.id}) }}">show</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="11">Y'a rien, achète autre chose</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
