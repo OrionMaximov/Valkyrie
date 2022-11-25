@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\UserMenu;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use Symfony\Component\Security\Core\User\UserInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -20,7 +21,9 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-         return parent::index(); 
+        $routeBuilder = $this->get(AdminUrlGenerator::class);
+
+        return $this->redirect($routeBuilder->setController(UserCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -28,6 +31,18 @@ class DashboardController extends AbstractDashboardController
         return Dashboard::new()
             ->setTitle('Valkyrie');
             
+            
+    }
+
+    public function configureUserMenu(UserInterface $user): UserMenu{
+        return parent::configureUserMenu($user)
+        ->setName($user->getPrenom())
+        ->setAvatarUrl($user->getUserName())
+        ->addMenuItems([
+            MenuItem::linkToRoute('Mon profile', 'fa fa-id-card', '...', ['...' => '...']),
+            MenuItem::linkToRoute('Parametres', 'fa fa-user-cog', '...', ['...' => '...']),
+           
+        ]);
     }
 
     public function configureMenuItems(): iterable
@@ -36,7 +51,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Mangas', 'fas fa-book', Mangas::class);    
-        yield MenuItem::linkToLogout('Deconnexion', 'fas fa-toggle-off');
+        
     }
     
 }
