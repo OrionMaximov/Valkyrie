@@ -14,22 +14,12 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils ,UserInterface $user, ManagerRegistry $doctrine): Response /* a voir ca bug toujours */
+    public function login(AuthenticationUtils $authenticationUtils ): Response /* a voir ca bug toujours */
     {
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
         // }
-        $date=$user->getBirthat();
-                $dateNaissance= $date->format('Y-m-d H:i:s');
-                
-                $aujourdhui = date("Y-m-d H:i:s");
-                $diff = date_diff(date_create($dateNaissance), date_create($aujourdhui));
-                
-                if ($diff < 18){
-                    $user->setRoles(['ROLE_USER']);
-                }else{
-                    $user->setRoles(['ROLE_PERVER']);
-                }
+        
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
