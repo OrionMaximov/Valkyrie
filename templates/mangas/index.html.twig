@@ -1,42 +1,54 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/card.css')}}">
+
+{% endblock %}
+
 {% block title %}Mangas index{% endblock %}
 
 {% block body %}
-<h1>Mangas index</h1>
-<table class="table">
-    <thead>
-        <tr><div class="card-header">
-         <th>Titre</th>
-            <th>Auteur</th>
-            <td>Tome</td>
-            <th>Serie</th>
-            <th>Isbn</th>
-            {# <th>Quantite</th> #}
-            <th>Prix</th>
-            <th>actions</th>
-        </tr>
-    </thead>
-  <tbody>
-        {% for manga in mangas %}
-        
-        <tr>
-            <td>{{ manga.titre }}</td>
-            <td>{{ manga.auteur }}</td>
-            <td>{{ manga.tome }}</td>
-            <td>{{ manga.serie }}</td>
-            <td>{{ manga.isbn }}</td>
-            {#  <td>{{ manga.quantite }}</td> #}
-            <td>{{ manga.prix }}</td>
-            <td>
-                <a href="{{ path('app_mangas_show', {'id': manga.id}) }}">show</a>
-            </td> 
-        </tr>
-        {% else %}
-        <tr>
-            <td colspan="11">Y'a rien, achète autre chose</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="bookAlign">
+    <h2>Mangas index</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <td>Tome</td>
+                <th>Serie</th>
+                <th>Isbn</th>
+                {# <th>Quantite</th> #}
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for manga in mangas %}
+            <tr>
+
+                <td>{{ manga.titre }}</td>
+                <td>{{ manga.auteur }}</td>
+                <td>{{ manga.tome }}</td>
+                <td>{{ manga.serie }}</td>
+                <td>{{ manga.isbn }}</td>
+                {#  <td>{{ manga.quantite }}</td> #}
+                <td>{{ manga.prix }}</td>
+                <td>
+                    <a href="{{ path('app_mangas_show', {'id': manga.id}) }}">Détails</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="11">Y'a rien, achète autre chose</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
 {% endblock %}

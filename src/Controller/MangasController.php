@@ -35,9 +35,9 @@ class MangasController extends AbstractController
         $manga = new Mangas();
         $form = $this->createForm(MangasType::class, $manga);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $mangasRepository->add($manga, true);
+            
             $dirUpload=str_replace("\\","/",$this->getParameter('upload_directory')."/");
             $dirAvatar=str_replace("\\","/",$this->getParameter('avatar_directory')."/");
             $dirAvatarX=str_replace("\\","/",$this->getParameter('avatarx256_directory')."/");

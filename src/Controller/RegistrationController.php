@@ -50,10 +50,10 @@ class RegistrationController extends AbstractController
 
                     $aujourdhui = date("Y-m-d");
                     $diff = date_diff(date_create($dateNaissance), date_create($aujourdhui));
-                   /*  dd($diff);   */
+                    /* dd($diff->format("%y")); */   
                     
 
-                    if ($diff <= "+18" ) {
+                    if ($diff->format("%y") <= "18" ) {
                         $user->setRoles(['ROLE_USER']);
                     } else {
                         $user->setRoles(['ROLE_PERVER']);
