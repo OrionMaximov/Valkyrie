@@ -213,4 +213,11 @@ class Mangas
 
         return $this;
     }
+    public function __toString()
+    {
+        if(is_null($this->titre)){
+            return "NULL";
+        }
+        return $this->titre;
+    }
 }

@@ -1,13 +1,8 @@
     const photos = document.querySelector(".mangas");
     const tabPhotos = [
-        "assets/image/covers/Mangas/Archdemon's Dilemma.jpg",
-        "assets/image/covers/Mangas/Assassination classroom.jpg",
-        "assets/image/covers/Mangas/death-note.jpg",
-        "assets/image/covers/Mangas/Baki the Grappler.jpg",
-        "assets/image/covers/Mangas/Dragon Ball.jpg",
-        "assets/image/covers/Mangas/Gannibal.jpg",
-        "assets/image/covers/Mangas/Hunter X Hunter.jpg",
-        "assets/image/covers/Mangas/Harem entre copines.webp",
+
+        
+        
 
         
 
