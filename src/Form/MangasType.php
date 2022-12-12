@@ -4,9 +4,10 @@ namespace App\Form;
 
 use App\Entity\Mangas;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class MangasType extends AbstractType
 {
@@ -23,7 +24,15 @@ class MangasType extends AbstractType
             ->add('etat')
             ->add('prix')
             ->add('pervers')
-            ->add('image',FileType::class)
+            ->add('image',FileType::class,[
+                'mapped'=>false,
+                'attr'=>[
+                    "accept"=> "image/*"
+                ],
+                'constraints'=>[
+                    new Image()
+                ]
+            ])
         ;
     }
 

@@ -27,10 +27,7 @@ class Mangas
      */
     private $auteur;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tome;
+    
 
     /**
      * @ORM\Column(type="integer")
@@ -73,6 +70,11 @@ class Mangas
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $tome;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,17 +104,7 @@ class Mangas
         return $this;
     }
 
-    public function getTome(): ?string
-    {
-        return $this->tome;
-    }
-
-    public function setTome(string $tome): self
-    {
-        $this->auteur = $tome;
-
-        return $this;
-    }
+   
 
     public function getSerie(): ?int
     {
@@ -206,6 +198,18 @@ class Mangas
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTome(): ?string
+    {
+        return $this->tome;
+    }
+
+    public function setTome(string $tome): self
+    {
+        $this->tome = $tome;
 
         return $this;
     }
