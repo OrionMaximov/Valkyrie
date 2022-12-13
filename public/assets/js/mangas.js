@@ -1,10 +1,14 @@
     const photos = document.querySelector(".mangas");
     const tabPhotos = [
-
-        
-        
-
-        
+        "assets/image/covers/Comic/A Walk Through Hell T1 - L'Entrepôt.jpg",
+        "assets/image/covers/Comic/Batman Death Metal.jpg",
+        "assets/image/covers/Comic/Batman Imposter.jpg",
+        "assets/image/covers/Comic/Batman One Dark Knight.jpg",
+        "assets/image/covers/Comic/Incognito.jpg",
+        "assets/image/covers/Comic/Justice Society of America.jpg",
+        "assets/image/covers/Comic/La legende de Dark Vador.jpg",
+        "assets/image/covers/Comic/Madman T1','Mike Allred.jpg",
+         
 
     ];
     const imgFull = [];
