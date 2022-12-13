@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comics index{% endblock %}
+
+{% block body %}
+    <h1>Comics index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Tome</th>
+                <th>Serie</th>
+                <th>Isbn</th>
+                <th>Quantite</th>
+                <th>Tarif</th>
+                <th>Etat</th>
+                <th>Prix</th>
+                <th>Pervers</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comic in comics %}
+            <tr>
+                <td>{{ comic.id }}</td>
+                <td>{{ comic.titre }}</td>
+                <td>{{ comic.auteur }}</td>
+                <td>{{ comic.tome }}</td>
+                <td>{{ comic.serie }}</td>
+                <td>{{ comic.isbn }}</td>
+                <td>{{ comic.quantite }}</td>
+                <td>{{ comic.tarif }}</td>
+                <td>{{ comic.etat ? 'Yes' : 'No' }}</td>
+                <td>{{ comic.prix }}</td>
+                <td>{{ comic.pervers ? 'Yes' : 'No' }}</td>
+                <td>{{ comic.image }}</td>
+                <td>
+                    <a href="{{ path('app_comics_show', {'id': comic.id}) }}">show</a>
+                    <a href="{{ path('app_comics_edit', {'id': comic.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_comics_new') }}">Create new</a>
+{% endblock %}

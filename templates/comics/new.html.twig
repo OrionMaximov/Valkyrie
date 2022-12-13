@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Comics{% endblock %}
+
+{% block body %}
+    <h1>Create new Comics</h1>
+
+    {{ include('comics/_form.html.twig') }}
+
+    <a href="{{ path('app_comics_index') }}">back to list</a>
+{% endblock %}
