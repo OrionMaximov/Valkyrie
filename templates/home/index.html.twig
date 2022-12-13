@@ -41,7 +41,17 @@
 <h2>Mangas</h2>
 
 
-<div class="mangas"></div>
+<div class="mangas">
+{#{{ dump(mangas) }}   #}
+    {% for manga in mangas %}
+   
+    
+    <div class="cover">
+        <img src="{{asset('/uploads/upload/'~ manga.image )}}"
+            onerror="this.src='{{ asset('assets/image/covers/mangas/default.jpg') }}'" alt="">
+    </div>
+    {% endfor %} 
+</div>
 
 <h2>Comic</h2>
 
