@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="cover">
-            <img src="{{asset('assets/image/covers/mangas'~ manga.id ~'.jpg')}}"
+            <img src="{{asset('/uploads/upload/' ~ manga.image)}}"
                 onerror="this.src='{{ asset('assets/image/covers/mangas/default.jpg') }}'" alt="">
         </div>
 

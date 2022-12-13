@@ -38,21 +38,7 @@ class MangasController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $mangasRepository->add($manga, true);
             
-            $dirUpload=str_replace("\\","/",$this->getParameter('upload_directory')."/");
-            $dirAvatar=str_replace("\\","/",$this->getParameter('avatar_directory')."/");
-            $dirAvatarX=str_replace("\\","/",$this->getParameter('avatarx256_directory')."/");
-            move_uploaded_file($_FILES['Mangas_image.form-control']['tmp_name']['avatar'],$dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
-
-            $image= new ImageResize($dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
-                $image->resizeToWidth(100);
-                $image->save($dirAvatar.$manga->getId().".jpg",IMAGETYPE_JPEG);
-                $image2= new ImageResize($dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
-                $image2->resizeToWidth(256);
-                $image2->save($dirAvatarX.$manga->getId()."x256.jpg",IMAGETYPE_JPEG);
-
-                unlink($dirUpload.$_FILES['Mangas_image.form-control']['name']['avatar']);
-
-            return $this->redirectToRoute('app_mangas_index', [], Response::HTTP_SEE_OTHER);
+            
         }
 
         return $this->renderForm('mangas/new.html.twig', [
@@ -70,6 +56,12 @@ class MangasController extends AbstractController
         if($manga->getQuantite() !== 0){
             $mode=true;
         }
+       
+
+           
+            
+
+           
         return $this->render('mangas/show.html.twig', [
             'manga' => $manga,
             'mode' => $mode,
