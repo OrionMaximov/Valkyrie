@@ -29,9 +29,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
             <div class="container-fluid">
                 <div id="logo">
-                    <img src="{{asset('assets/image/valkyrie-high-resolution-logo-black-on-transparent-background.png')}}" alt="" class="logo">
-                </div>
-                <a class="navbar-brand" href="{{path ('home')}}"> Valkyrie</a>
+                    <a class="navbar-brand" href="{{path ('home')}}"><img src="{{asset('assets/image/valkyrie-high-resolution-logo-black-on-transparent-background.png')}}" alt="" class="logo">
+                </a> </div>
+               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
                     aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -76,7 +76,7 @@
                         </li>
                         {%else%}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Tout Public</a>
+                                <a class="nav-link" href="{{path('ageVerif')}}">Tout Public</a>
                             </li>
                         {% endif %}
                     </ul>
@@ -90,7 +90,16 @@
     </header>  
 
     {% block body %} {% endblock %}
-   
+    <div id="position">
+        <footer>
+            <div class="footer">
+                <a href="{{path('cgu')}}">Mentions légales</a>  
+            </div>
+            <div class="footer">
+             <a href="{{path('about')}}">About</a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

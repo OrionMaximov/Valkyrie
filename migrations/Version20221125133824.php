@@ -26,6 +26,10 @@ final class Version20221125133824 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
+<<<<<<< HEAD
        // $this->addSql('ALTER TABLE mangas DROP tome');
+=======
+        // $this->addSql('ALTER TABLE mangas DROP tome');
+>>>>>>> af5909dc442306f6f29b58feb97f6eadd6d41dd4
     }
 }
