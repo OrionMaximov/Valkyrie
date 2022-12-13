@@ -38,4 +38,15 @@ class HomeController extends AbstractController
             
         ]);
     }
+    
+    /**
+     * @Route("/ageVerif", name="ageVerif")
+     */
+    public function verif(): Response
+    {
+        return $this->render('home/ageverif.html.twig', [
+            
+        ]);
+    }
+    
 }
