@@ -3,6 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Mangas;
+use Gumlet\ImageResize;
+use App\Form\MangasType;
+use App\Repository\MangasRepository;
+use Symfony\Component\HttpFoundation\Request;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\DomCrawler\Field\FileFormField;
@@ -38,5 +42,5 @@ class MangasCrudController extends AbstractCrudController
             
         ];
     }
-    
+
 }
