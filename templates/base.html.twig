@@ -29,9 +29,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
             <div class="container-fluid">
                 <div id="logo">
-                    <img src="{{asset('assets/image/valkyrie-high-resolution-logo-black-on-transparent-background.png')}}" alt="" class="logo">
-                </div>
-                <a class="navbar-brand" href="{{path ('home')}}"> Valkyrie</a>
+                    <a class="navbar-brand" href="{{path ('home')}}"><img src="{{asset('assets/image/valkyrie-high-resolution-logo-black-on-transparent-background.png')}}" alt="" class="logo">
+                </a> </div>
+               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
                     aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -46,9 +46,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{path ('app_mangas_index')}}">Mangas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
@@ -95,8 +92,11 @@
     {% block body %} {% endblock %}
     <div id="position">
         <footer>
-            <div id="footer">
-                <a href="{{path('cgu')}}">Mentions légales</a>
+            <div class="footer">
+                <a href="{{path('cgu')}}">Mentions légales</a>  
+            </div>
+            <div class="footer">
+             <a href="{{path('about')}}">About</a>
             </div>
         </footer>
     </div>

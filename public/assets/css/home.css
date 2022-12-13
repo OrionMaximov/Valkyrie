@@ -5,7 +5,7 @@
 
 .banniere{
     background-image: url(../image/mangabaniere.jpg);
-    height: 90vh;
+    height: 65vh; /* verifié pour le responsive si l'on reduit a 50vh*/
     width: 100%;
     display: flex;
     justify-content: center;

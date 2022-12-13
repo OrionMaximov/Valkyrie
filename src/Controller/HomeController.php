@@ -30,11 +30,11 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/footer", name="footer")
+     * @Route("/about", name="about")
      */
-    public function indexFooter(): Response
+    public function indexAbout(): Response
     {
-        return $this->render('home/footer.html.twig', [
+        return $this->render('home/about.html.twig', [
             
         ]);
     }

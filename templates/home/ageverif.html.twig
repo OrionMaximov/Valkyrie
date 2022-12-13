@@ -6,6 +6,6 @@
 
 {% block body %}
 <div>Le mode tout public est activé si vous voulez acceder à tout notre site nous devons verifié si vous avez plus de 18 ans </div>
-<button type="submit">yes</button>
-<button type="submit">no</button>
+<button type="submit" ><a href="{{path('app_register')}}">Oui même si c'est pas vrai</a></button>
+<button type="submit"><a href="{{path('home')}}">Oh bah non</a></button>
 {% endblock %}
