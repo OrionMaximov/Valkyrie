@@ -49,7 +49,7 @@ class MangasCrudController extends AbstractCrudController
                 ->setFormType(FileUploadType::class)
                 ->setBasePath('/uploads/upload/')
                 ->setUploadDir('public/uploads/upload/')
-                ->setUploadedFileNamePattern('Manga'.'.jpg'),
+                ->setUploadedFileNamePattern('Manga'.uniqid().'.jpg'),
             
        ];
     }
