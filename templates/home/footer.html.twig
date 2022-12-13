@@ -1,5 +1,3 @@
-<html>
-
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
@@ -7,11 +5,14 @@
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 {% endblock %}
 
+<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+{% block body %}
 <footer>
     <div id="footer">
         <a href="{{path('cgu')}}">Mentions légales</a>
+        <a href="#">About</a>
     </div>
 </footer>
-{% block body %}{% endblock %}
+{% endblock %}
 
-</html>
+
