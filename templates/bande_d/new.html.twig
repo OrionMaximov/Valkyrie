@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New BandeD{% endblock %}
+
+{% block body %}
+    <h1>Create new BandeD</h1>
+
+    {{ include('bande_d/_form.html.twig') }}
+
+    <a href="{{ path('app_bande_d_index') }}">back to list</a>
+{% endblock %}

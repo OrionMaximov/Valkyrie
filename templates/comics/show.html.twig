@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comics{% endblock %}
+
+{% block body %}
+    <h1>Comics</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ comic.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ comic.titre }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ comic.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Tome</th>
+                <td>{{ comic.tome }}</td>
+            </tr>
+            <tr>
+                <th>Serie</th>
+                <td>{{ comic.serie }}</td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ comic.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ comic.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Tarif</th>
+                <td>{{ comic.tarif }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ comic.etat ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ comic.prix }}</td>
+            </tr>
+            <tr>
+                <th>Pervers</th>
+                <td>{{ comic.pervers ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ comic.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_comics_index') }}">back to list</a>
+
+    <a href="{{ path('app_comics_edit', {'id': comic.id}) }}">edit</a>
+
+    {{ include('comics/_delete_form.html.twig') }}
+{% endblock %}
