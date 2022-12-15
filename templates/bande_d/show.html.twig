@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BandeD{% endblock %}
+
+{% block body %}
+    <h1>BandeD</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bande_d.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ bande_d.titre }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ bande_d.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Tome</th>
+                <td>{{ bande_d.tome }}</td>
+            </tr>
+            <tr>
+                <th>Serie</th>
+                <td>{{ bande_d.serie }}</td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ bande_d.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ bande_d.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Tarif</th>
+                <td>{{ bande_d.tarif }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ bande_d.etat ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ bande_d.prix }}</td>
+            </tr>
+            <tr>
+                <th>Pervers</th>
+                <td>{{ bande_d.pervers ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ bande_d.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bande_d_index') }}">back to list</a>
+
+    <a href="{{ path('app_bande_d_edit', {'id': bande_d.id}) }}">edit</a>
+
+    {{ include('bande_d/_delete_form.html.twig') }}
+{% endblock %}
