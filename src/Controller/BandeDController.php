@@ -50,9 +50,14 @@ class BandeDController extends AbstractController
      * @Route("/{id}", name="app_bande_d_show", methods={"GET"})
      */
     public function show(BandeD $bandeD): Response
-    {
+    {   
+        $mode=false;
+        if($bandeD->getQuantite() !== 0){
+            $mode=true;
+        }
         return $this->render('bande_d/show.html.twig', [
             'bande_d' => $bandeD,
+            'mode' => $mode,
         ]);
     }
 
