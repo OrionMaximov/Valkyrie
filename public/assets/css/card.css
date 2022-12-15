@@ -3,12 +3,28 @@
     flex-direction: column;
     align-items: center;
 }
+.bookAlignItem h3,.bookAlignItem h4,.bookAlignItem h5{
+    text-align: center;
+}
 .bookAlignItem .table{
-    width: 100%;
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.bookAlignItem .card{
+    width: 30%; 
+}
+
+.bookAlignItem .card p{
+   
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
+
 .bookAlign{
     width: 80%;
     display: flex;
