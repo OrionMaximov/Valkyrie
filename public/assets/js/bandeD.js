@@ -1,11 +1,11 @@
 const photos2 = document.querySelector(".bandeD");
     const tabphotos2 = [
         "assets/image/covers/bandeD/Conquêtes.jpg",
-        "assets/image/covers/bandeD/Druuna.jpeg",
+        "assets/image/covers/bandeD/Miss Shaolin.jpg",
         "assets/image/covers/bandeD/Elfes.jpg",
         "assets/image/covers/bandeD/Hawkmoon.jpg",
         "assets/image/covers/bandeD/Lanfeust de troy.jpg",
-        "assets/image/covers/bandeD/Le declic.jpg",
+        "assets/image/covers/bandeD/Thorgal.jpg",
         "assets/image/covers/bandeD/Le donjon de Naheulbeuk.jpg",
         "assets/image/covers/bandeD/Le scrameustache.jpg",
 
