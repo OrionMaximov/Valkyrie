@@ -6,50 +6,33 @@
 <div class="bookAlignItem">
   <h2>Mangas index</h2>
 
-  <table class="table">
-    
-      <thead>
-        <tr>
-          <th>Titre</th>
-          <th>Auteur</th>
-          <th>Tome</td>
-          <th>Serie</th>
-          <th>Isbn</th>
-          {#
-          <th>Quantite</th>
-          #}
-          <th>Prix</th>
-          <th>Actions</th>
-        </tr> 
-      </thead>
-   
-    
-      <tbody >
-        {% for manga in mangas %}
-        <tr>
-          <td>{{ manga.titre }}</td>
-          <td>{{ manga.auteur }}</td>
-          <td>{{ manga.tome }}</td>
-          <td>{{ manga.serie }}</td>
-          <td>{{ manga.isbn }}</td>
-          {#
-          <td>{{ manga.quantite }}</td>
-          #}
-          <td>{{ manga.prix }}</td>
-          <td>
+
+    <div class="table">
+     
+        {% for manga in mangas %} 
+        <div class="card text-white bg-dark mb-3" style="max-width: 120rem;">
+        <div class="card-header">
+          <h3>{{ manga.titre }}</h3></div>
+          <div class="card-body">
+          <h4>{{ manga.auteur }}</h4>
+          <h4>Tome:{{ manga.tome }}</h4>
+          <h4>Serie:{{ manga.serie }}</h4>
+          <h4>Prix:{{ manga.prix }}</h4>
+          <h5>
             <a href="{{ path('app_mangas_show', { id: manga.id }) }}"
-              >Détails</a
+              >+ d'infos</a
             >
-          </td>
-        </tr>
+          </h5>
+        </div>
+        </div>
         {% else %}
         <tr>
-          <td colspan="11">Y'a rien, achète autre chose</td>
+          <p colspan="11">Y'a rien, achète autre chose</p>
         </tr>
         {% endfor %}
-      </tbody>
     
-  </table>
+    </div>
+  
 </div>
 
 {% endblock %}
