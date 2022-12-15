@@ -1,0 +1,17 @@
+<html>
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+{% endblock %}
+
+<footer>
+    <div id="footer">
+        <a href="{{path('cgu')}}">Mentions légales</a>
+    </div>
+</footer>
+{% block body %}{% endblock %}
+
+</html>
