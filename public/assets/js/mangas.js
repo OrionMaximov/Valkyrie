@@ -7,7 +7,7 @@
         "assets/image/covers/Mangas/One_Piece.jpg",
         "assets/image/covers/Mangas/spy x family.jpg",
         "assets/image/covers/Mangas/Valkyrie Apocalypse.jpg",
-        "assets/image/covers/Mangas/Ma soeur est une experte en fellation.jpg",
+        "assets/image/covers/Mangas/Assassination classroom.jpg",
          
 
     ];

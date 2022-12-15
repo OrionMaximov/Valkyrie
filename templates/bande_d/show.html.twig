@@ -1,66 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}BandeD{% endblock %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/card.css')}}">
+
+{% endblock %}
+
+{% block title %}Bande Dessinnés{% endblock %}
 
 {% block body %}
-    <h1>BandeD</h1>
+<div class="bookAlign">
+    <h2>Bande Dessinnés</h2>
+    <div class="bouquin">
+        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">
+                <h3>
+                    <td>{{ bande_d.titre }}</td>
+                </h3>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <td>{{ bande_d.auteur }}</td>
+                </h4>
+                <p class="card-text">
+                    <td>Tome: {{ bande_d.tome }}</td>
+                    </td>
+                </p>
+                <p class="card-text">
+                    <td>Nombre de volumes : {{ bande_d.serie }}</td>
+                    </td>
+                </p>
+                <p class="card-text">Stock : {% if mode != null %}
+                    <td>Disponible</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+                    {% else %}
+                    <td>Indisponible</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+                    {% endif %}</p>
+                <p class="card-text">
+                    <td>Etat : {{ bande_d.etat ? 'Neuf' : 'Occasion' }}</td>
+                </p>
+                <p class="card-text">
+                    <td>Prix : {{ bande_d.prix }} €uros</td>
+                </p>
+                <p class="card-text">
+                    <td>ISBN : {{ bande_d.isbn }}</td>
+                </p>
+            </div>
+        </div>
+        <div class="cover">
+            <img src="{{asset('/uploads/upload/' ~ bande_d.image)}}"
+                onerror="this.src='{{ asset('assets/image/covers/bande_d/default.jpg') }}'" alt="">
+        </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ bande_d.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ bande_d.titre }}</td>
-            </tr>
-            <tr>
-                <th>Auteur</th>
-                <td>{{ bande_d.auteur }}</td>
-            </tr>
-            <tr>
-                <th>Tome</th>
-                <td>{{ bande_d.tome }}</td>
-            </tr>
-            <tr>
-                <th>Serie</th>
-                <td>{{ bande_d.serie }}</td>
-            </tr>
-            <tr>
-                <th>Isbn</th>
-                <td>{{ bande_d.isbn }}</td>
-            </tr>
-            <tr>
-                <th>Quantite</th>
-                <td>{{ bande_d.quantite }}</td>
-            </tr>
-            <tr>
-                <th>Tarif</th>
-                <td>{{ bande_d.tarif }}</td>
-            </tr>
-            <tr>
-                <th>Etat</th>
-                <td>{{ bande_d.etat ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ bande_d.prix }}</td>
-            </tr>
-            <tr>
-                <th>Pervers</th>
-                <td>{{ bande_d.pervers ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ bande_d.image }}</td>
-            </tr>
-        </tbody>
-    </table>
+        
 
-    <a href="{{ path('app_bande_d_index') }}">back to list</a>
+    </div>
+    <button type="submit" class="btn btn-danger">Ajouter au panier</button>
 
-    <a href="{{ path('app_bande_d_edit', {'id': bande_d.id}) }}">edit</a>
+    <a href="{{ path('app_bande_d_index') }}">Back to the futur</a>
 
-    {{ include('bande_d/_delete_form.html.twig') }}
+</div>
 {% endblock %}

@@ -51,8 +51,14 @@ class ComicsController extends AbstractController
      */
     public function show(Comics $comic): Response
     {
+        $mode=false;
+        if($comic->getQuantite() !== 0){
+            $mode=true;
+        }
+
         return $this->render('comics/show.html.twig', [
             'comic' => $comic,
+            'mode' => $mode,
         ]);
     }
 

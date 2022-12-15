@@ -1,55 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}BandeD index{% endblock %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/card.css')}}">
+
+{% endblock %}
+
+{% block title %}Bande Dessinés {% endblock %}
 
 {% block body %}
-    <h1>BandeD index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Tome</th>
-                <th>Serie</th>
-                <th>Isbn</th>
-                <th>Quantite</th>
-                <th>Tarif</th>
-                <th>Etat</th>
-                <th>Prix</th>
-                <th>Pervers</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for bande_d in bande_ds %}
-            <tr>
-                <td>{{ bande_d.id }}</td>
-                <td>{{ bande_d.titre }}</td>
-                <td>{{ bande_d.auteur }}</td>
-                <td>{{ bande_d.tome }}</td>
-                <td>{{ bande_d.serie }}</td>
-                <td>{{ bande_d.isbn }}</td>
-                <td>{{ bande_d.quantite }}</td>
-                <td>{{ bande_d.tarif }}</td>
-                <td>{{ bande_d.etat ? 'Yes' : 'No' }}</td>
-                <td>{{ bande_d.prix }}</td>
-                <td>{{ bande_d.pervers ? 'Yes' : 'No' }}</td>
-                <td>{{ bande_d.image }}</td>
-                <td>
-                    <a href="{{ path('app_bande_d_show', {'id': bande_d.id}) }}">show</a>
-                    <a href="{{ path('app_bande_d_edit', {'id': bande_d.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="13">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_bande_d_new') }}">Create new</a>
+<div class="bookAlignItem">
+    <h2>Bande Dessinés</h2>
+  
+  
+      <div class="table">
+       
+          {% for bande in bande_ds %} 
+          <div class="card text-white bg-dark mb-3" style="max-width: 120rem;">
+          <div class="card-header">
+            <h3>{{ bande.titre }}</h3></div>
+            <div class="card-body">
+            <h4>{{ bande.auteur }}</h4>
+            <h4>Tome:{{ bande.tome }}</h4>
+            <h4>Serie:{{ bande.serie }}</h4>
+            <h4>Prix:{{ bande.prix }}</h4>
+            <h5>
+              <a href="{{ path('app_bande_d_show', { id: bande.id }) }}"
+                >+ d'infos</a
+              >
+            </h5>
+          </div>
+          </div>
+          {% else %}
+          <tr>
+            <p colspan="11">Y'a rien, achète autre chose</p>
+          </tr>
+          {% endfor %}
+      
+      </div>
+    
+  </div>
 {% endblock %}
