@@ -26,10 +26,11 @@
 .carousel1 {
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: rgb(211, 211, 211);
 }
+
 
 #slider {
     position: relative;
@@ -62,3 +63,6 @@ h2{
     padding-bottom: 1rem;
     
 }
+
+/* a faire vendredi */
+.ageVerif

@@ -7,6 +7,7 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     <link rel="stylesheet" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
@@ -47,14 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{path ('app_mangas_index')}}">Mangas</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">Genres</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                {# Ajouter boucle pour les catégories #}
-                            </div>
-                        </li>
+                        
                     </ul>
                     
                     <ul class="navbar-nav me-auto">
@@ -91,14 +85,18 @@
 
     {% block body %} {% endblock %}
     <div id="position">
-        <footer>
+       
             <div class="footer">
-                <a href="{{path('cgu')}}">Mentions légales</a>  
-            </div>
-            <div class="footer">
+            <a href="{{path('cgu')}}">Mentions légales/CGU/CGV</a>  
+           
              <a href="{{path('about')}}">About</a>
-            </div>
-        </footer>
+            <div><p>Nous suivre : 
+             <a href="http://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+             <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+             <a href="http://www.twitter.com"><i class="fa-brands fa-twitter"></i></a></div>
+            </p> 
+        </div> 
+        
     </div>
 </body>
 
