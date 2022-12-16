@@ -1,8 +1,25 @@
 const sliderImg = document.querySelector("#slider img");
+const sliderImg2 = document.querySelector("#slider2 img");
+const sliderImg3 = document.querySelector("#slider3 img");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
+const prev2 = document.getElementById("prev2");
+const next2 = document.getElementById("next2");
+const prev3 = document.getElementById("prev3");
+const next3 = document.getElementById("next3");
 
 const urlImg = [
+    "./assets/image/death-note.jpg",
+    "./assets/image/moriarty.jpg",
+    "./assets/image/one-piece.jpg",
+];
+const urlImg2 = [
+    "./assets/image/moriarty.jpg",
+     "./assets/image/one-piece.jpg",
+     "./assets/image/death-note.jpg",
+];
+const urlImg3 = [
+    
     "./assets/image/one-piece.jpg",
     "./assets/image/death-note.jpg",
     "./assets/image/moriarty.jpg",
@@ -10,7 +27,12 @@ const urlImg = [
 ];
 // 1ere étape : je déclare un index
 let i = 0;
-sliderImg.src = urlImg[i];
+let j = 0;
+let k = 0;
+sliderImg.src = urlImg[i] ;
+sliderImg2.src= urlImg2[j];
+sliderImg3.src= urlImg3[k];
+
 next.addEventListener(
     "click",
     function () {
@@ -44,10 +66,37 @@ setInterval(
     function(){
         if(i === urlImg.length-1){
             i = 0;
+
             sliderImg.src = urlImg[i];
         }else{
         i++; 
             sliderImg.src = urlImg[i];
+    }
+    },
+    4000
+)
+setInterval(
+    function(){
+        if(j === urlImg2.length-1){
+            j = 0;
+            
+            sliderImg2.src = urlImg2[j];
+        }else{
+        j++; 
+            sliderImg2.src = urlImg2[j];
+    }
+    },
+    4000
+)
+setInterval(
+    function(){
+        if(k === urlImg3.length-1){
+            k = 0;
+            
+            sliderImg3.src = urlImg3[k];
+        }else{
+        k++; 
+            sliderImg3.src = urlImg3[k];
     }
     },
     4000

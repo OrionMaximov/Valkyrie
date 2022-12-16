@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{asset('assets/css/card.css')}}">
+
+{% endblock %}
+
+{% block title %}Comics{% endblock %}
+
+{% block body %}
+<div class="bookAlign">
+    <h2>Comics</h2>
+    <div class="bouquin">
+        <div class="card text-white bg-success mb-3 " style="max-width: 20rem;">
+            <div class="card-header">
+                <h3>
+                    <td>{{ comic.titre }}</td>
+                </h3>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <td>{{ comic.auteur }}</td>
+                </h4>
+                <p class="card-text">
+                    <td>Tome: {{ comic.tome }}</td>
+                    </td>
+                </p>
+                <p class="card-text">
+                    <td>Nombre de volumes : {{ comic.serie }}</td>
+                    </td>
+                </p>
+                <p class="card-text">Stock : {% if mode != null %}
+                    <td>Disponible</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+                    {% else %}
+                    <td>Indisponible</td> {# voir comment ne pas affiche le nbre mais juste en stock ou non #}
+                    {% endif %}</p>
+                <p class="card-text">
+                    <td>Etat : {{ comic.etat ? 'Neuf' : 'Occasion' }}</td>
+                </p>
+                <p class="card-text">
+                    <td>Prix : {{ comic.prix }} €uros</td>
+                </p>
+                <p class="card-text">
+                    <td>ISBN : {{ comic.isbn }}</td>
+                </p>
+            </div>
+        </div>
+        <div class="cover">
+            <img src="{{asset('/uploads/upload/' ~ comic.image)}}"
+                onerror="this.src='{{ asset('assets/image/covers/comic/default.jpg') }}'" alt="">
+        </div>
+
+        
+
+    </div>
+    <button type="submit" class="btn btn-danger">Ajouter au panier</button>
+
+    <a href="{{ path('app_comics_index') }}">Back to the futur</a>
+
+</div>
+{% endblock %}

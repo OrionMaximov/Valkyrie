@@ -2,9 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\BandeD;
 use App\Entity\User;
 use App\Entity\Mangas;
 use App\Entity\Category;
+use App\Entity\Comics;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -50,7 +52,9 @@ class DashboardController extends AbstractDashboardController
         //yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');   
         yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
-        yield MenuItem::linkToCrud('Mangas', 'fas fa-book', Mangas::class);    
+        yield MenuItem::linkToCrud('Mangas', 'fas fa-book', Mangas::class);
+        yield MenuItem::linkToCrud('BandeD', 'fas fa-book', BandeD::class); 
+        yield MenuItem::linkToCrud('Comics', 'fas fa-book', Comics::class);     
         
     }
     

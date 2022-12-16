@@ -1,13 +1,15 @@
     const photos = document.querySelector(".mangas");
     const tabPhotos = [
-        "assets/image/covers/bandeD/Conquêtes.jpg",
-        "assets/image/covers/bandeD/Druuna.jpeg",
-        "assets/image/covers/bandeD/Elfes.jpg",
-        "assets/image/covers/bandeD/Hawkmoon.jpg",
-        "assets/image/covers/bandeD/Lanfeust de troy.jpg",
-        "assets/image/covers/bandeD/Le declic.jpg",
-        "assets/image/covers/bandeD/Le donjon de Naheulbeuk.jpg",
-        "assets/image/covers/bandeD/Le scrameustache.jpg",
+        "assets/image/covers/Mangas/Archdemon's Dilemma.jpg",
+        "assets/image/covers/Mangas/Baki the Grappler.jpg",
+        "assets/image/covers/Mangas/Dragon Ball.jpg",
+        "assets/image/covers/Mangas/Jujutsu Kaisen.jpg",
+        "assets/image/covers/Mangas/One_Piece.jpg",
+        "assets/image/covers/Mangas/spy x family.jpg",
+        "assets/image/covers/Mangas/Valkyrie Apocalypse.jpg",
+        "assets/image/covers/Mangas/Assassination classroom.jpg",
+         
+
     ];
     
     const imgFull = [];
@@ -27,7 +29,7 @@
 
     //document.write(tabPhotos[2]);
     let index = 0;
-    while (index < tabPhotos.length) {
+    while (index < tabPhotos.length ) {
         // créer mes ElementHTML
         let divImg = document.createElement("div");
         divImg.classList.add("divImg");
