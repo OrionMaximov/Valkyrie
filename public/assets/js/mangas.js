@@ -1,12 +1,15 @@
     const photos = document.querySelector(".mangas");
     const tabPhotos = [
-
-        
-        
-
-        
-
+        "assets/image/covers/bandeD/Conquêtes.jpg",
+        "assets/image/covers/bandeD/Druuna.jpeg",
+        "assets/image/covers/bandeD/Elfes.jpg",
+        "assets/image/covers/bandeD/Hawkmoon.jpg",
+        "assets/image/covers/bandeD/Lanfeust de troy.jpg",
+        "assets/image/covers/bandeD/Le declic.jpg",
+        "assets/image/covers/bandeD/Le donjon de Naheulbeuk.jpg",
+        "assets/image/covers/bandeD/Le scrameustache.jpg",
     ];
+    
     const imgFull = [];
     const frameImg = document.createElement("div");
     frameImg.style.width = "100vw";
