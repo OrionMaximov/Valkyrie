@@ -63,7 +63,34 @@ h2{
     padding-bottom: 1rem;
     
 }
-
-/* a faire vendredi */
-.ageVerif
+.baci{
+    height: 50vh;
+    width: 100%;
+    background-image: url(../image/noustevoyons.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: ;
+}
+.full{
+    height: 60vh;
+    background-color: #000;
+}
+.baci a{
+    text-decoration: none;
+    color: white;
+    border: 3px;
+    border-color: blue;
+}
+#red{
+    background-color: red;
+}
+#green{
+    background-color: green;
+}
 
