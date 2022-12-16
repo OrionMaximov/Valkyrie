@@ -9,20 +9,20 @@ const prev3 = document.getElementById("prev3");
 const next3 = document.getElementById("next3");
 
 const urlImg = [
-    "./assets/image/death-note.jpg",
-    "./assets/image/moriarty.jpg",
-    "./assets/image/one-piece.jpg",
+    "./assets/image/covers/mangas/death-note.jpg",
+    "./assets/image/covers/mangas/Moriarty.jpg",
+    "./assets/image/covers/mangas/One-Piece.jpg",
 ];
 const urlImg2 = [
-    "./assets/image/moriarty.jpg",
-     "./assets/image/one-piece.jpg",
-     "./assets/image/death-note.jpg",
+    "./assets/image/covers/mangas/Moriarty.jpg",
+     "./assets/image/covers/mangas/One-Piece.jpg",
+     "./assets/image/covers/mangas/death-note.jpg",
 ];
 const urlImg3 = [
     
-    "./assets/image/one-piece.jpg",
-    "./assets/image/death-note.jpg",
-    "./assets/image/moriarty.jpg",
+    "./assets/image/covers/mangas/One-Piece.jpg",
+    "./assets/image/covers/mangas/death-note.jpg",
+    "./assets/image/covers/mangas/Moriarty.jpg",
     
 ];
 // 1ere étape : je déclare un index
