@@ -81,7 +81,7 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-transform: ;
+   
 }
 .full{
     height: 60vh;
@@ -98,5 +98,13 @@ h2{
 }
 #green{
     background-color: green;
+}
+
+.bandeD,.mangas,.comic{
+    margin-bottom: 2rem;   
+}
+.bandeD img,.comic img,.mangas img {
+   height: 400px;
+   width: auto;
 }
 
