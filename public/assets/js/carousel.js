@@ -11,16 +11,16 @@ const next3 = document.getElementById("next3");
 const urlImg = [
     "./assets/image/covers/mangas/death-note.jpg",
     "./assets/image/covers/mangas/Moriarty.jpg",
-    "./assets/image/covers/mangas/One-Piece.jpg",
+    "./assets/image/covers/mangas/one-piece.jpeg",
 ];
 const urlImg2 = [
     "./assets/image/covers/mangas/Moriarty.jpg",
-     "./assets/image/covers/mangas/One-Piece.jpg",
+     "./assets/image/covers/mangas/one-piece.jpeg",
      "./assets/image/covers/mangas/death-note.jpg",
 ];
 const urlImg3 = [
     
-    "./assets/image/covers/mangas/One-Piece.jpg",
+    "./assets/image/covers/mangas/one-piece.jpeg",
     "./assets/image/covers/mangas/death-note.jpg",
     "./assets/image/covers/mangas/Moriarty.jpg",
     

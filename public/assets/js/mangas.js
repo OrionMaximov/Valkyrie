@@ -4,7 +4,7 @@
         "assets/image/covers/Mangas/Baki the Grappler.jpg",
         "assets/image/covers/Mangas/Dragon Ball.jpg",
         "assets/image/covers/Mangas/Jujutsu Kaisen.jpg",
-        "assets/image/covers/Mangas/One_Piece.jpg",
+        "assets/image/covers/Mangas/one-piece.jpeg",
         "assets/image/covers/Mangas/spy x family.jpg",
         "assets/image/covers/Mangas/Valkyrie Apocalypse.jpg",
         "assets/image/covers/Mangas/Assassination classroom.jpg",
