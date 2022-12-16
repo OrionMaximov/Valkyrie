@@ -19,6 +19,8 @@
           <div class="card text-white bg-dark mb-3" style="max-width: 120rem;">
           <div class="card-header">
             <h3>{{ bande.titre }}</h3></div>
+            <img src="{{asset('/uploads/upload/' ~ bande.image)}}">
+
             <div class="card-body">
             <h4>{{ bande.auteur }}</h4>
             <h4>Tome:{{ bande.tome }}</h4>
