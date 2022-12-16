@@ -6,6 +6,10 @@
 .bookAlignItem h3,.bookAlignItem h4,.bookAlignItem h5{
     text-align: center;
 }
+
+.bookAlignItem h4{
+    font-size: 1rem;
+}
 .bookAlignItem .table{
     width: 80%;
     margin: 1rem auto;

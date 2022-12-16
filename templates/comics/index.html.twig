@@ -19,6 +19,7 @@
           <div class="card text-white bg-dark mb-3" style="max-width: 120rem;">
           <div class="card-header">
             <h3>{{ comic.titre }}</h3></div>
+            <img src="{{asset('/uploads/upload/' ~ comic.image)}}">
             <div class="card-body">
             <h4>{{ comic.auteur }}</h4>
             <h4>Tome:{{ comic.tome }}</h4>
