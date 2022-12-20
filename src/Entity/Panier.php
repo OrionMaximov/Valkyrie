@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PanierRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Panier
      * @ORM\Column(type="float")
      */
     private $prix;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Mangas::class, inversedBy="paniers")
+     */
+    private $order_id;
+
+    public function __construct()
+    {
+        $this->order_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,30 @@ class Panier
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Mangas>
+     */
+    public function getOrderId(): Collection
+    {
+        return $this->order_id;
+    }
+
+    public function addOrderId(Mangas $orderId): self
+    {
+        if (!$this->order_id->contains($orderId)) {
+            $this->order_id[] = $orderId;
+        }
+
+        return $this;
+    }
+
+    public function removeOrderId(Mangas $orderId): self
+    {
+        $this->order_id->removeElement($orderId);
 
         return $this;
     }

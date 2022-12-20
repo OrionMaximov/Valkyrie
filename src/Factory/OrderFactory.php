@@ -2,6 +2,7 @@
 
 namespace App\Factory;
 
+use App\Entity\Mangas;
 use App\Entity\Order;
 use App\Entity\Panier;
 use App\Entity\Produit;
