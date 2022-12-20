@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MangasRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -74,6 +76,16 @@ class Mangas
      * @ORM\Column(type="string", length=255)
      */
     private $tome;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Panier::class, mappedBy="order_id")
+     */
+    private $paniers;
+
+    public function __construct()
+    {
+        $this->paniers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -219,5 +231,32 @@ class Mangas
             return "NULL";
         }
         return $this->titre;
+    }
+
+    /**
+     * @return Collection<int, Panier>
+     */
+    public function getPaniers(): Collection
+    {
+        return $this->paniers;
+    }
+
+    public function addPanier(Panier $panier): self
+    {
+        if (!$this->paniers->contains($panier)) {
+            $this->paniers[] = $panier;
+            $panier->addOrderId($this);
+        }
+
+        return $this;
+    }
+
+    public function removePanier(Panier $panier): self
+    {
+        if ($this->paniers->removeElement($panier)) {
+            $panier->removeOrderId($this);
+        }
+
+        return $this;
     }
 }

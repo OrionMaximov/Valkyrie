@@ -7,13 +7,13 @@
         {% for paniers in panier %}
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="{{asset('assets/image/valkyrie-high-resolution-logo-black-on-transparent-background.png')}}" alt="{{ panier.titre }}" class="card-img-top">
+                    <img src="{{asset('assets/image/valkyrie-high-resolution-logo-black-on-transparent-background.png')}}" alt="{{ paniers.titre }}" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">{{ panier.titre }}</h5>
-                        <p class="card-text">{{ panier.etat }}</p>
+                        <h5 class="card-title">{{ paniers.titre }}</h5>
+                        <p class="card-text">{{ paniers.etat }}</p>
                         <div class="d-flex justify-content-between align-item-center">
-                            <a href="#" class="btn btn-dark">Voir détails</a>
-                            <span class="h5 mt-auto">{{ panier.prix }} €</span>
+                            <a href="{{path('produit.detail',{id: paniers.id})}}" class="btn btn-dark">Voir détails</a>
+                            <span class="h5 mt-auto">{{ paniers.prix }} €</span>
                         </div>
                     </div>
                 </div>
